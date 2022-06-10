@@ -1,0 +1,14 @@
+{% extends 'main.html'%}
+{% block content%}
+{%load static%}
+<body style="background-image:url('{% static 'image/pic4.webp' %}');background-size: 100%">
+<body>
+    <h1>Edit {{contact}}'s Contact</h1>
+    <form method="post" action>
+        {% csrf_token %}
+    {{form.as_p}}
+    <a href="{% url 'index' %}">Cancel</a>
+    <input type="submit" value="Update Contact">
+    </form>
+</body>
+{% endblock %}

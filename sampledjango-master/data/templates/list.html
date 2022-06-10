@@ -1,0 +1,10 @@
+{% extends 'main.html'%}
+{% block content%}
+{%load static%}
+<h1>Student-side-application</h1>
+<body style="background-image:url('{% static 'image/pic3.jpg' %}' );background-size: cover">
+<body>
+    <a class="navbar-brand" href="{% url 'loc' %}" text-align: center >Find Location</a>
+    <br><a href="{% url 'logout' %}">Logout</a><br><br><br>
+</body>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'main.html'%}
+{% block content%}
+{%load static%}
+<body style="background-image:url('{% static 'image/pic6.jpg' %}');background-size: cover">
+
+<nav class="navbar navbar-light bg-light">
+    <img src="{% static 'image/pic9.webp' %}" width="50"
+     height="50" class="d-inline-block align-top" alt="">
+     <a class="navbar-brand" href="" ></a>
+     <a button type="button" onclick="alert('request sent')" href="{% url 'submit' %}" >Submit Location</a>
+    </button>
+   
+  </a>
+</nav>
+<!-- As a heading -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <br><a href="{% url 'add' %}">Add Contact</a><br>
+        {% for i in contact %}
+        {{i.roll}} {{i.name}} {{i.number}} 
+        <a href="{% url 'edit' i.id %}">Edit</a>
+        <a href="{% url 'delete' i.id %}">Delete</a> <br>
+  
+        {% empty %}
+        <h3>No contacts found!</h3>
+       {% endfor %}
+      </div>
+    </div>
+</nav>
+ <!-- As a heading -->
+ <br>
+<nav class="navbar navbar-light ">
+  <a class="navbar-brand" href="{% url 'var' %}"  >ViewAttendance</a>
+  <br><br>
+
+  <a class="btn btn-primary" href="{% url 'logout' %}" role="button">Logout</a>
+</nav>
+{% endblock %}

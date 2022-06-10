@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+{%load static%}
+    <body style="background-image:url('{% static 'image/wall.jpg' %}');background-size: 100%">
+<table style="width: 50%;">
+        <colgroup>
+        <col span="3" style="background-color: lightblue">
+        <col span="4" style="background-color: lightgreen">
+        </colgroup>
+        <tr>
+            <th>Roll NO</th>
+            <th>Name</th>
+            <th>Contact</th>
+            <th>Attendance</th>
+        </tr>
+        {% for i in contact %}
+        <tr>
+            <td>{{i.roll}}</td>
+            <td> {{i.name}}</td>
+            <td>{{i.number}} </td>
+            <td>Present</td>
+    </tr>
+    {% endfor %}
+        </table>
+</body>
+</html>
+

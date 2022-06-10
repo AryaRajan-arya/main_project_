@@ -1,0 +1,12 @@
+{% extends 'main.html'%}
+{% block content%}
+{%load static%}
+<h2>Teacher-side-application</h2>
+<br>
+    <form method="post" action>
+        {% csrf_token %}
+        <table>{{ form.as_table }}</table>
+        <input type="submit" value="Login">
+    </form>
+    <body style="background-image:url('{% static 'image/attn.jpg' %}');background-size: cover">
+{% endblock %}

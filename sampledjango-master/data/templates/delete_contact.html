@@ -1,0 +1,14 @@
+{% extends 'main.html'%}
+{% block content%}
+{%load static%}
+<body style="background-image:url('{% static 'image/pic3.webp' %}');background-size: 100%">
+<body>
+    <h1>Delete {{contact}}'s Contact</h1>
+    <form method="post" action>
+        {% csrf_token %}
+        <h3>Are you sure you want to delete?</h3>
+    <a href="{% url 'index' %}">Cancel</a>
+    <input type="submit" value="Delete Contact">
+    </form>
+</body>
+{% endblock %}
